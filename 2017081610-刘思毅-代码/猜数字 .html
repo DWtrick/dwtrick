@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			span{color: red;}
+			.number{width: 20px; height: 20px;}
+		</style>
+		<meta charset="utf-8">
+		<title>猜数字</title>
+		<script>
+			var total;
+			var number =[];
+			var number1 = [];
+			var count=0;
+			var locatio=0;
+			var l='';
+			var answer='4A4B';
+			function clear(){
+				document.getElementById('n1').value='';
+				document.getElementById('n2').value='';
+				document.getElementById('n3').value='';
+				document.getElementById('n4').value='';
+			}
+			function generation(){
+				for(i=1;i<=10;i++){
+					document.getElementById('result'+i).innerHTML=''
+				}
+				count=0
+				total=10
+				clear()
+				document.getElementById('result1').innerHTML=''
+				clear()
+				total=10
+				document.getElementById('second').innerHTML=total;
+				a=parseInt((Math.random())*10)
+				b=parseInt((Math.random())*10)
+				c=parseInt((Math.random())*10)
+				d=parseInt((Math.random())*10)
+				number[0]=a
+				number[1]=b
+				number[2]=c
+				number[3]=d
+				document.getElementById('n1').focus()
+			}
+			function guess(){
+				count=0
+				locatio=0
+				number1[0]=document.getElementById('n1').value;
+				number1[1]=document.getElementById('n2').value;
+				number1[2]=document.getElementById('n3').value;
+				number1[3]=document.getElementById('n4').value;
+				if(number1[0]==''|number1[1]==''|number1[2]==''|number1[3]=='')
+				{
+					alert('请不要输入空值')
+				}
+				else{for(i=0;i<number.length;i++){
+					if(number[i]==number1[i]){locatio++;}
+				}
+				for(i=0;i<number.length;i++){
+					for(j=0;j<number1.length;j++){
+						if(number[i]==number1[j]){
+							delete number1[j]
+							count++	
+							break
+						}
+					}
+				}
+				console.log(number)
+				l='result'+total
+				document.getElementById(l).innerHTML=count+'A'+locatio+'B'
+				text=count+'A'+locatio+'B'
+				if(answer==text){alert('恭喜你,猜对了')}
+				total--;
+				document.getElementById('second').innerHTML=total;
+				document.getElementById('n1').focus()
+				clear()
+				if(total<=0){
+					alert('遗憾！！游戏结束');
+					total=1;
+				}
+				
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<span>执行次数：</span><span id='second'></span><input style="float: right;" type="button" onclick="generation()" value="Start" />
+		<center>	
+			<input onkeyup="document.getElementById('n2').focus()" id="n1" class="number" type="text">
+			<input onkeyup="document.getElementById('n3').focus()" id="n2" class="number" type="text">
+			<input onkeyup="document.getElementById('n4').focus()" id="n3" class="number" type="text">
+			<input onkeyup="document.getElementById('n4').blur()" id="n4" class="number" type="text"><br /><br />
+			<input style="margin: 0 auto;" type="button" onclick="guess()" value="Guess" /><br>
+			执行结果：
+			<span id='result1'></span></span><span id='result2'></span></span><span id='result3'></span>
+			<span id='result4'></span></span><span id='result5'></span></span><span id='result6'></span>
+			<span id='result7'></span></span><span id='result8'></span></span><span id='result9'></span>
+			<span id='result10'></span>
+			</center>
+			
+	</body>
+</html>

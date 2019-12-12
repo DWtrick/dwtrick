@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="plane.css" type="text/css">
+    <script src="plane.js"></script>
+    <title>预定</title>
+</head>
+
+<body>
+
+    <img id="bg" src="timg.jpg">
+    <div id="back">
+        <div id="data">
+            <span id="cg">今天是</span>
+            <script>
+                setInterval("cg.innerHTML=new Date().toLocaleString()", 1000);
+            </script>
+        </div>
+        <div id="title">
+            <h1 style="text-align:center">预定机票</h1>
+        </div>
+        <div id="main">
+            <h2 style="color: cadetblue;">&nbsp;&nbsp;机票预订</h3>
+                <hr>
+                <div class="little" id="hbxx">
+                    <h3 style="background-color: cornflowerblue;">&nbsp;&nbsp;*航班信息</h3>
+                    南方航空 CG6953 &nbsp;&nbsp;
+                    <span class="blue">[修改航班]&nbsp;[退改签]</span><br> 机型 H66&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">[修改舱位]</span><br> 2019年1月10日 15:00 a机场(起飞) -> 2019年1月10日 20:00 b机场(到达)
+                    <hr>
+                </div>
+                <div class="little" id="price">
+				<h1>信息</h1>
+                    <span id="pprice">?人？元</span>&nbsp;&nbsp;&nbsp;<span class="blue" title="" id="tit" onmouseover="titl()"></span>
+                </div>
+                <div class="little" id="ckxx">
+                    <h3 style="background-color: cornflowerblue; text-align: center;">&nbsp;&nbsp;*乘客信息</h3>
+                    <div style="text-align: right;">
+                        <input type="checkbox" value="乘客1" class="check" onclick="doit(0);">&nbsp;小赵&nbsp;&nbsp;
+                        <input type="checkbox" value="乘客2" class="check" onclick="doit(1);">&nbsp;小钱&nbsp;&nbsp;
+                        <input type="checkbox" value="乘客3" class="check" onclick="doit(2);">&nbsp;小孙&nbsp;&nbsp;
+                        <input type="checkbox" value="乘客4" class="check" onclick="doit(3);">&nbsp;小李&nbsp;&nbsp;
+                    </div>
+                    <hr>
+                    <button style="position: relative; left: 0px;" onclick="insertl(null)">新增乘客</button>
+                </div>
+                <div class="little" id="lxrxx">
+                    <h3 style="background-color: cornflowerblue;">&nbsp;&nbsp;*联系人信息</h3>
+                    联&nbsp;&nbsp;系&nbsp;&nbsp;人：<input type="text" class="notnull"><br> 手机号码：
+                    <input type="text" class="notnull" id="phone"><br> 联系地址：
+                    <input type="text"><br>
+                    <hr>
+                </div>
+                <div class="little">
+                    <button>上一步</button>
+                    <button onclick="next()">下一步</button>
+                </div>
+        </div>
+    </div>
+    <script>
+        insertl(null);
+    </script>
+
+</body>
+
+</html>

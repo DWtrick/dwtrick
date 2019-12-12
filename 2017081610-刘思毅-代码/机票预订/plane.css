@@ -1,0 +1,50 @@
+body {
+    margin: 0px;
+}
+
+#bg {
+    width: 100%;
+    height: 170%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    position: absolute;
+    border: 3px solid red;
+}
+
+#data {
+    height: 25px;
+    background-color: whitesmoke;
+    border: 2px solid gray;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#title {
+    width: 1000px;
+    margin: auto;
+    color: rgb(21, 8, 78);
+}
+
+#main {
+    top: 60px;
+    margin: auto;
+    width: 1000px;
+    height: auto;
+    background-color: whitesmoke;
+    border: 2px solid gray;
+}
+
+.little {
+    width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+#ckxx {
+    text-align: left;
+}
+
+.blue {
+    color: blue;
+}
